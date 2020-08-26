@@ -138,6 +138,10 @@
                         <viewLayoutGuide key="safeArea" id="2tw-Qd-Cav"/>
                     </view>
                     <navigationItem key="navigationItem" id="DZh-Nd-K4d"/>
+                    <connections>
+                        <outlet property="alloyLabel" destination="Ih4-JR-mzW" id="o4P-64-1XR"/>
+                        <outlet property="grLabel" destination="Dmi-6e-YfI" id="E3z-wX-F29"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swW-H4-WYP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

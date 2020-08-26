@@ -8,23 +8,35 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
-
+class ResultViewController: UIViewController, UITextFieldDelegate {
+    
+    //Outlets:
+    @IBOutlet weak var alloyLabel: UILabel!
+    @IBOutlet weak var grLabel: UILabel!
+    
+    //Reciving Data from ViewController:
+    var grNewString = String()
+    var finenessString = String()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //converting (string to float):
+        let grams : Float? = Float(grNewString)
+        let fineness : Float? = Float(finenessString)
+        
+        //Equations:
+        let percent = (fineness!*10)/100
+        let netW = (percent*grams!)/100
+        let alloy = grams! - netW
+        
+        //Converting (Float to string):
+        let finalW : String = String(format: "%.2f", netW)
+        let finalAlloy : String = String(format: "%.2f", alloy)
+        
+        // Changing Result Labels:
+        grLabel.text = finalW
+        alloyLabel.text = finalAlloy
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
