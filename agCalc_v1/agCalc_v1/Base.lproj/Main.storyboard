@@ -57,6 +57,9 @@
                                 <state key="normal" title="Calculate!">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUY-Sm-gaA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,6 +69,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="finenessTextField" destination="oEY-lD-jbW" id="4J4-nU-UYE"/>
+                        <outlet property="grTextField" destination="KXj-6N-pxj" id="bx7-Hs-D96"/>
+                        <segue destination="1dy-P2-Rs1" kind="show" identifier="segue" id="Q7J-Gy-J81"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +84,7 @@
             <objects>
                 <viewController id="1dy-P2-Rs1" customClass="ResultViewController" customModule="agCalc_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I2Y-dK-fM1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You need to add:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL1-tA-Cnn">
@@ -87,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-cW-OKN" userLabel="Result Stack View">
-                                <rect key="frame" x="114.5" y="332" width="185" height="232.5"/>
+                                <rect key="frame" x="114.5" y="305" width="185" height="232.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmi-6e-YfI">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="34.5"/>
@@ -129,6 +137,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2tw-Qd-Cav"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DZh-Nd-K4d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swW-H4-WYP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

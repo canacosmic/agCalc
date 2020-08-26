@@ -8,13 +8,41 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    // Outlets:
+    @IBOutlet weak var grTextField: UITextField!
+    @IBOutlet weak var finenessTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.grTextField.delegate = self
+        self.finenessTextField.delegate = self
     }
-
-
+    
+    // Bouton action & segue:
+    @IBAction func buttonAction(_ sender: UIButton) {
+        if (grTextField.text != ""), (finenessTextField.text != ""){
+            performSegue(withIdentifier: "segue", sender: self)
+        }else {sender.shake()
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+        }
+    }
+    
+    //Sending input data to ResutViewController:
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultController = segue.destination as! ResultViewController
+        
+        resultController.grNewString = grTextField.text!
+        resultController.finenessString = finenessTextField.text!
+    }
+    
+    // Hide Keyboard when user touches outside:
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
